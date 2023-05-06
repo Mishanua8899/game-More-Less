@@ -6,6 +6,7 @@ let randomNum = Math.floor(Math.random() * max + min);
 let Game = {
     tryes: 0,
     ifLost: false,
+    ifWin: false,
 }
 
 function makeGame() {
@@ -23,8 +24,16 @@ function makeGame() {
         out.innerHTML = "Это число меньше заданного";
         trys.innerHTML = `Ты использовал ${Game.tryes} попыток. Осталось ${20 - Game.tryes} попыток`;
     } else {
+        Game.ifWin = true
+    }
+
+    if (Game.ifWin === true) {
         out.innerHTML = "Ты победил";
         trys.innerHTML = `За игру ты использовал ${Game.tryes} попыток.`
+        if (numField > randomNum || numField < randomNum) {
+            Game.tryes = Game.tryes - 1;
+        }
+
     }
 
     if (Game.tryes >= 20) {
@@ -50,56 +59,10 @@ button.addEventListener("click", function (e) {
     makeGame()
 })
 
-console.log(randomNum)
 
 
 
 
-/*function makeGame() {
-    let num = numField;
-    let outInput = out.innerHTML
-    if (num > randomNum) {
-        Game.tryes++
-        outInput = "Это число больше заданного";
-        trys.innerHTML = "Это число больше заданного"
-    } if (num < randomNum) {
-        Game.tryes++
-        outInput = "Это число меньше заданного";
-        trys.innerHTML = `Ты использовал ${Game.tryes} попыток. Осталось ${20 - Game.tryes} попыток`;
-    } if (num === randomNum) {
-        outInput = "Ты победил";
-        trys.innerHTML = `За игру ты использовал ${Game.tryes} попыток.`
-    }
-
-    if (Game.tryes >= 20) {
-        Game.ifLost = true
-    }
-}
 
 
-function mistakeInRange() {
-    if (numField > 900) {
-        notification.classList.toggle('move');
-    }
-}
 
-function loseGame() {
-    out.innerHTML = "Ты проиграл";
-    trys.innerHTML = "Ты ирасходовал все попытки";
-    tempOut.innerHTML = `Правильный ответ:${randomNum}`;
-}
-
-function play() {
-    if (Game.ifLost === false) {
-        makeGame();
-        mistakeInRange();
-    } else {
-        loseGame();
-    }
-}
-
-
-button.addEventListener('click', function (e) {
-    e.preventDefault
-    play();
-})*/
