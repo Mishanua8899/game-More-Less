@@ -18,6 +18,17 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    background-color: white;
+}
+
+.Theme {
+    background-color: black;
+    border: 1px solid;
+    border-radius: 6px;
+    margin-left: auto;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
 }
 
 .warning {
@@ -33,6 +44,8 @@ body {
     justify-content: center;
     transform-origin: 0 0;
     transform: translate(-110%);
+    padding: 10px;
+    border-radius: 7px;
 }
 
 .button_ {

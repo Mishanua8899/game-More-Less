@@ -1,8 +1,4 @@
-let numField = document.getElementById('random-number').value;
 let button = document.getElementById('button');
-let tempOut = document.getElementById('temp-out');
-let out = document.getElementById('out');
-let trys = document.getElementById('trys');
 let notification = document.querySelector('.warning')
 let min = 1;
 let max = 900;
@@ -13,6 +9,11 @@ let Game = {
 }
 
 function makeGame() {
+    let numField = document.getElementById('random-number').value;
+    let tempOut = document.getElementById('temp-out');
+    let trys = document.getElementById('trys');
+    let out = document.getElementById('out');
+
     if (numField > randomNum) {
         Game.tryes++
         out.innerHTML = "Это число больше заданного";
@@ -29,13 +30,56 @@ function makeGame() {
     if (Game.tryes >= 20) {
         Game.ifLost = true
     }
+
+    if (Game.ifLost === true) {
+        out.innerHTML = "Ты проиграл";
+        trys.innerHTML = "Ты ирасходовал все попытки";
+        tempOut.innerHTML = `Правильный ответ:${randomNum}`;
+    }
+
+    if (numField > 900 || numField < 1) {
+        notification.classList.toggle('move');
+        Game.tryes = Game.tryes - 1
+    }
+
+}
+
+
+button.addEventListener("click", function (e) {
+    e.preventDefault()
+    makeGame()
+})
+
+console.log(randomNum)
+
+
+
+
+/*function makeGame() {
+    let num = numField;
+    let outInput = out.innerHTML
+    if (num > randomNum) {
+        Game.tryes++
+        outInput = "Это число больше заданного";
+        trys.innerHTML = "Это число больше заданного"
+    } if (num < randomNum) {
+        Game.tryes++
+        outInput = "Это число меньше заданного";
+        trys.innerHTML = `Ты использовал ${Game.tryes} попыток. Осталось ${20 - Game.tryes} попыток`;
+    } if (num === randomNum) {
+        outInput = "Ты победил";
+        trys.innerHTML = `За игру ты использовал ${Game.tryes} попыток.`
+    }
+
+    if (Game.tryes >= 20) {
+        Game.ifLost = true
+    }
 }
 
 
 function mistakeInRange() {
     if (numField > 900) {
         notification.classList.toggle('move');
-    
     }
 }
 
@@ -54,11 +98,8 @@ function play() {
     }
 }
 
-function OnClick(){
-    button.addEventListener('click', function (e) {
+
+button.addEventListener('click', function (e) {
     e.preventDefault
     play();
-})
-}
-OnClick()
-
+})*/
