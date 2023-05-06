@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Больше меньше</title>
+</head>
+
+<body>
+    <header>
+        <h1>Игра "Больше - Меньше"</h1>
+    </header>
+    <main>
+        <aside>
+            <p class="info">
+                Задача заключается в том, что тебе нужно отгадать число,
+                которое генерируется случайным образом в диапозоне от 1 до 900
+            </p>
+        </aside>
+        <hr>
+        <div class="gameZone">
+            <p class="guess">Угадайте число:<input type="text" placeholder="Введите число" class="spaceField" id="random-number"></p>
+            <div class="blockForButt"><button class="button_" id="button">Угадать</button></div>
+            <p>Подсказки:</p>
+            <p id="out"></p>
+            <p id="temp-out"></p>
+            <hr>
+            <p>Попытки:</p>
+            <p id="trys"></p>
+        </div>
+        <div class="warning">Диапозон установлен от 1 до 900</div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url('ofont.ru_Montserrat\ Alternates.ttf');
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat Alternates';
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.warning {
+    width: 35%;
+    height: 70px;
+    border: none;
+    background: linear-gradient(to bottom right, blue, 90%, black);
+    color: white;
+    font-size: 13px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-origin: 0 0;
+    transform: translate(-110%);
+}
+
+.button_ {
+    background-color: white;
+    font-family: 'Montserrat Alternates';
+    padding: 5px;
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: all ease 0.4s;
+}
+
+main {
+    margin-left: 5px;
+}
+
+.guess {
+    text-align: center;
+}
+
+.blockForButt {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+}
+
+header h1 {
+    margin: 0px;
+}
+
+.button_:hover {
+    background-color: blue;
+    color: white;
+    transition: all ease 0.4s;
+    border-color: white;
+    cursor: pointer;
+}
+
+.spaceField {
+    border: 2px solid;
+    border-radius: 6px;
+    font-family: 'Montserrat Alternates';
+    margin-left: 3px;
+    width: 10%;
+}
+
+.move {
+    animation: Notif 10s ease normal;
+}
+
+@keyframes Notif {
+    0% {
+        transform: translate(-110%);
+    }
+    25% {
+        transform: translate(0%);
+    }
+    50% {
+        transform: translate(0%);
+    }
+    75% {
+        transform: translate(0%);
+    }
+    100% {
+        transform: translate(-110%);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .warning {
+        width: 70%
+    }
+}
