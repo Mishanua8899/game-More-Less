@@ -27,6 +27,10 @@ function makeGame() {
         Game.ifWin = true
     }
 
+    if(typeof(numField) === "string"){
+        Game.ifLost = true
+    }
+
     if (Game.ifWin === true) {
         out.innerHTML = "Ты победил";
         trys.innerHTML = `За игру ты использовал ${Game.tryes} попыток.`
