@@ -23,11 +23,11 @@ function makeGame() {
         Game.tryes++
         out.innerHTML = "Это число меньше заданного";
         trys.innerHTML = `Ты использовал ${Game.tryes} попыток. Осталось ${20 - Game.tryes} попыток`;
-    } else {
+    } else if(numField === randomNum) {
         Game.ifWin = true
     }
 
-
+   
     if (Game.ifWin === true) {
         out.innerHTML = "Ты победил";
         trys.innerHTML = `За игру ты использовал ${Game.tryes} попыток.`
