@@ -1,3 +1,4 @@
+let butt_restart = document.querySelector("#buttonForRest") //TODO: короче когда я написал прослушку события на кнопку для рестарта перестала засчитываться победа. Надо сделать так чтобы она засчитывалась
 let button = document.getElementById('button');
 let notification = document.querySelector('.warning')
 let min = 1;
@@ -15,15 +16,15 @@ function makeGame() {
     let trys = document.getElementById('trys');
     let out = document.getElementById('out');
 
-    if (numField > randomNum) {
+    if (parseInt(numField) > randomNum) {
         Game.tryes++
         out.innerHTML = "Это число больше заданного";
         trys.innerHTML = `Ты использовал ${Game.tryes} попыток. Осталось ${20 - Game.tryes} попыток`;
-    } else if (numField < randomNum) {
+    } else if (parseInt(numField) < randomNum) {
         Game.tryes++
         out.innerHTML = "Это число меньше заданного";
         trys.innerHTML = `Ты использовал ${Game.tryes} попыток. Осталось ${20 - Game.tryes} попыток`;
-    } else if(numField === randomNum) {
+    } else if(parseInt(numField) === randomNum) {
         Game.ifWin = true
     }
 
@@ -58,6 +59,17 @@ function makeGame() {
 button.addEventListener("click", function (e) {
     e.preventDefault()
     makeGame()
+})
+
+butt_restart.addEventListener("click", function(e) {
+    e.preventDefault();
+    Game.tryes = 0;
+    Game.ifWin  = false;
+    Game.ifLost = false;
+    out.innerHTML = '';
+    trys.innerHTML = '';
+    tempOut.innerHTML = '';
+    randomNum = Math.floor(Math.random() * max + min);
 })
 
 
