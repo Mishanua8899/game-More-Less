@@ -3,7 +3,7 @@ let bodyElements = document.querySelector(".body")
 buttonForNightTheme.addEventListener('click', function (e) {
     e.preventDefault();
     if (bodyElements.style.backgroundColor === "white") {
-        bodyElements.style.backgroundColor = "black"
+        bodyElements.style.backgroundColor = "rgb(25, 25, 25)"
         bodyElements.style.color = "white"
         buttonForNightTheme.style.backgroundColor = "white"
         buttonForNightTheme.innerHTML = '&#127774'
