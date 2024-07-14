@@ -19,6 +19,7 @@ body {
     justify-content: center;
     gap: 10px;
     background-color: white;
+    transition: all 0.3s ease;
 }
 
 .Theme {
@@ -86,15 +87,22 @@ header h1 {
 }
 
 .spaceField {
-    border: 2px solid;
+    border: 1px solid blue;
     border-radius: 6px;
     font-family: 'Montserrat Alternates';
     margin-left: 3px;
     width: 10%;
+    caret-color: blue;
 }
+
+.spaceField::placeholder
 
 .move {
     animation: Notif 10s ease normal;
+}
+
+input:focus {
+    outline: 2px solid blue;
 }
 
 @keyframes Notif {
