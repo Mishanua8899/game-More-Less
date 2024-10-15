@@ -10,6 +10,7 @@ let Game = {
     ifWin: false,
 }
 
+
 function makeGame() {
     let numField = document.getElementById('random-number').value;
     let tempOut = document.getElementById('temp-out');
@@ -49,12 +50,15 @@ function makeGame() {
     }
 
     if (numField > 900 || numField < 1) {
-        notification.classList.toggle('move');
+        notification.classList.add('move');
+        setTimeout(function() {
+            notification.classList.remove('move');
+        }, 10000)
+        console.log('move')
         Game.tryes = Game.tryes - 1
     }
 
 }
-
 
 button.addEventListener("click", function (e) {
     e.preventDefault()

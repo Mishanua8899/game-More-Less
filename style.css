@@ -44,7 +44,7 @@ body {
     align-items: center;
     justify-content: center;
     transform-origin: 0 0;
-    transform: translate(-110%);
+    transform: translateX(-110%);
     padding: 10px;
     border-radius: 7px;
 }
@@ -95,8 +95,6 @@ header h1 {
     caret-color: blue;
 }
 
-.spaceField::placeholder
-
 .move {
     animation: Notif 10s ease normal;
 }
@@ -107,23 +105,23 @@ input:focus {
 
 @keyframes Notif {
     0% {
-        transform: translate(-110%);
+        transform: translateX(-110%);
     }
     25% {
-        transform: translate(0%);
+        transform: translateX(0%);
     }
     50% {
-        transform: translate(0%);
+        transform: translateX(0%);
     }
     75% {
-        transform: translate(0%);
+        transform: translateX(0%);
     }
     100% {
-        transform: translate(-110%);
+        transform: translateX(-110%);
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
     .warning {
         width: 70%
     }
